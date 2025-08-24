@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abroad Helplinebd</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Abroad Helplinebd - Study Abroad Consultants</title>
+  <meta name="description" content="Your trusted Education Consultant for student visas and global opportunities. Study in Australia, Canada, Korea, Malaysia, and China.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
@@ -16,6 +17,8 @@
       --light-gray: #e0e0e0;
       --white: #ffffff;
       --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --gold: #ffd700;
+      --dark-blue: #003a75;
     }
 
     * {
@@ -52,8 +55,10 @@
 
     .logo-img {
       height: 50px;
+      width: 50px;
       margin-right: 0.75rem;
       border-radius: 5px;
+      object-fit: contain;
     }
 
     .logo-text {
@@ -75,6 +80,7 @@
       font-weight: 600;
       transition: color 0.3s ease;
       position: relative;
+      font-size: 1rem;
     }
 
     .menu a:after {
@@ -84,12 +90,12 @@
       height: 2px;
       bottom: -5px;
       left: 0;
-      background-color: #ffd700;
+      background-color: var(--gold);
       transition: width 0.3s ease;
     }
 
     .menu a:hover {
-      color: #ffd700;
+      color: var(--gold);
     }
 
     .menu a:hover:after {
@@ -99,7 +105,6 @@
     .search {
       display: flex;
       gap: 0.5rem;
-      margin-top: 0.5rem;
     }
 
     .search input {
@@ -128,21 +133,12 @@
     .hero {
       text-align: center;
       padding: 6rem 2rem 4rem;
-      background: linear-gradient(135deg, var(--primary-blue), var(--accent-red));
+      background: linear-gradient(rgba(0, 87, 183, 0.85), rgba(184, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center;
       color: white;
       position: relative;
       overflow: hidden;
-    }
-
-    .hero:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-      background-size: cover;
     }
 
     .intro h1 {
@@ -177,7 +173,7 @@
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     }
 
-    .study-options {
+    .social-buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -185,7 +181,7 @@
       margin-top: 2.5rem;
     }
 
-    .study-options button {
+    .social-buttons button {
       background-color: white;
       color: var(--primary-blue);
       border: 2px solid var(--primary-blue);
@@ -199,7 +195,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .study-options button:hover {
+    .social-buttons button:hover {
       background-color: var(--primary-blue);
       color: white;
       transform: translateY(-3px);
@@ -305,7 +301,7 @@
     }
 
     .footer {
-      background-color: var(--accent-red);
+      background-color: var(--dark-blue);
       color: white;
       text-align: center;
       padding: 2rem;
@@ -326,8 +322,135 @@
     }
 
     .social-icons a:hover {
-      color: #ffd700;
+      color: var(--gold);
       transform: translateY(-5px);
+    }
+
+    /* New styles for enhanced sections */
+    .country-section {
+      padding: 3rem 2rem;
+      background-color: var(--white);
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 1200px;
+      box-shadow: var(--box-shadow);
+    }
+    
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .country-card {
+      background: var(--light-bg);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+      border-left: 4px solid var(--primary-blue);
+    }
+    
+    .country-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .country-card img {
+      height: 30px;
+      margin-bottom: 1rem;
+    }
+    
+    .testimonials {
+      background-color: var(--primary-blue);
+      color: white;
+      padding: 4rem 2rem;
+      margin: 4rem 0;
+    }
+    
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+    
+    .testimonial-author {
+      font-weight: 600;
+    }
+
+    .stats-section {
+      background: linear-gradient(to right, var(--primary-blue), var(--dark-blue));
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .stat-box {
+      padding: 1.5rem;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+    }
+
+    .services-section {
+      padding: 4rem 2rem;
+      background-color: var(--light-bg);
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--box-shadow);
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .service-icon {
+      font-size: 3rem;
+      color: var(--primary-blue);
+      margin-bottom: 1.5rem;
     }
 
     /* Responsive Design */
@@ -350,6 +473,7 @@
       .search {
         width: 100%;
         justify-content: center;
+        margin-top: 1rem;
       }
       
       .search input {
@@ -359,15 +483,19 @@
       .intro h1 {
         font-size: 2.2rem;
       }
+      
+      .country-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
     }
 
     @media (max-width: 600px) {
-      .study-options {
+      .social-buttons {
         flex-direction: column;
         align-items: center;
       }
       
-      .study-options button {
+      .social-buttons button {
         width: 100%;
         max-width: 280px;
         justify-content: center;
@@ -380,22 +508,32 @@
       .section-title {
         font-size: 1.8rem;
       }
+      
+      .contact-info p {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <header class="navbar">
     <div class="branding">
-      <img src="root/image.jpg" alt="Abroad Helplinebd Logo" class="logo-img" />
+      <img src="image.jpg" alt="Abroad Helplinebd Logo" class="logo-img" />
       <div class="logo-text">Abroad Helplinebd</div>
     </div>
 
     <nav class="menu">
       <ul>
-        <li><a href="https://AbroadhelplineBD.com" target="_blank" rel="noopener">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Apply</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="https://abroadhelplinebd.com">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#apply">Apply</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact-info">Contact</a></li>
       </ul>
     </nav>
 
@@ -409,16 +547,16 @@
     <section class="intro">
       <h1 data-aos="fade-down">Study Abroad with Confidence</h1>
       <p data-aos="fade-up" data-aos-delay="200">Your trusted Education Consultant for student visas and global opportunities.</p>
-      <a href="#" class="cta-button" data-aos="zoom-in" data-aos-delay="400">Book an Appointment</a>
+      <a href="#contact-info" class="cta-button" data-aos="zoom-in" data-aos-delay="400">Book an Appointment</a>
 
-      <div class="study-options">
-        <button data-aos="fade-right" data-aos-delay="600">
+      <div class="social-buttons">
+        <button data-aos="fade-right" data-aos-delay="600" onclick="window.open('https://facebook.com/AbroadhelplineBD', '_blank')">
           <i class="fab fa-facebook-f" style="margin-right: 8px;"></i> Facebook
         </button>
-        <button data-aos="fade-right" data-aos-delay="700">
+        <button data-aos="fade-right" data-aos-delay="700" onclick="window.open('https://wa.me/+8801616624551', '_blank')">
           <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Whatsapp
         </button>
-        <button data-aos="fade-left" data-aos-delay="800">
+        <button data-aos="fade-left" data-aos-delay="800" onclick="window.open('https://instagram.com/AbroadhelplineBD', '_blank')">
           <i class="fab fa-instagram" style="margin-right: 8px;"></i> Instagram
         </button>
         <button data-aos="fade-left" data-aos-delay="900" onclick="document.getElementById('contact-info').scrollIntoView({ behavior: 'smooth' });">
@@ -428,63 +566,129 @@
     </section>
   </main>
 
-  <section data-aos="fade-up">
+  <section class="stats-section" data-aos="fade-up">
+    <div class="stats-container">
+      <div class="stat-box" data-aos="zoom-in" data-aos-delay="200">
+        <div class="stat-number">1000+</div>
+        <div class="stat-label">Students Helped</div>
+      </div>
+      <div class="stat-box" data-aos="zoom-in" data-aos-delay="300">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="stat-box" data-aos="zoom-in" data-aos-delay="400">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Visa Success Rate</div>
+      </div>
+      <div class="stat-box" data-aos="zoom-in" data-aos-delay="500">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="country-section" data-aos="fade-up">
     <h2 class="section-title">Study with Scholarships</h2>
     <p class="section-subtitle">
       We have been working to make people's dreams come true. We are your trusted partner for student visas, coaching, and global opportunities.
     </p>
- 
 
-    <div class="study-options">
-      <button data-aos="zoom-in" data-aos-delay="200">
-        <img src="https://flagcdn.com/w40/au.png" alt="Australia Flag" style="height: 20px; vertical-align: middle; margin-right: 8px;">
-        Study in Australia
-      </button>
-      <button data-aos="zoom-in" data-aos-delay="300">
-        <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" style="height: 20px; vertical-align: middle; margin-right: 8px;">
-        Study in Canada
-      </button>
-      <button data-aos="zoom-in" data-aos-delay="400">
-        <img src="https://flagcdn.com/w40/kr.png" alt="Korea Flag" style="height: 20px; vertical-align: middle; margin-right: 8px;">
-        Study in Korea
-      </button>
-      <button data-aos="zoom-in" data-aos-delay="500">
-        <img src="https://flagcdn.com/w40/my.png" alt="Malaysia Flag" style="height: 20px; vertical-align: middle; margin-right: 8px;">
-        Study in Malaysia
-      </button>
-      <button data-aos="zoom-in" data-aos-delay="600">
-        <img src="https://flagcdn.com/w40/cn.png" alt="China Flag" style="height: 20px; vertical-align: middle; margin-right: 8px;">
-        Study in China
-      </button>
+    <div class="country-grid">
+      <div class="country-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://flagcdn.com/w40/au.png" alt="Australia Flag">
+        <h3>Study in Australia</h3>
+        <p>World-class education with post-study work opportunities</p>
+        <a href="#" class="cta-button">Explore</a>
+      </div>
+      <div class="country-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag">
+        <h3>Study in Canada</h3>
+        <p>Quality education and pathway to permanent residency</p>
+        <a href="#" class="cta-button">Explore</a>
+      </div>
+      <div class="country-card" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://flagcdn.com/w40/kr.png" alt="Korea Flag">
+        <h3>Study in Korea</h3>
+        <p>Innovative technology programs with scholarships</p>
+        <a href="#" class="cta-button">Explore</a>
+      </div>
+      <div class="country-card" data-aos="zoom-in" data-aos-delay="500">
+        <img src="https://flagcdn.com/w40/my.png" alt="Malaysia Flag">
+        <h3>Study in Malaysia</h3>
+        <p>Affordable quality education in a multicultural environment</p>
+        <a href="#" class="cta-button">Explore</a>
+      </div>
+      <div class="country-card" data-aos="zoom-in" data-aos-delay="600">
+        <img src="https://flagcdn.com/w40/cn.png" alt="China Flag">
+        <h3>Study in China</h3>
+        <p>World-renowned universities with diverse programs</p>
+        <a href="#" class="cta-button">Explore</a>
+      </div>
     </div>
   </section>
 
-  <section class="info-boxes" data-aos="fade-up">
-    <h2 class="section-title">Explore Our Services</h2>
+  <section id="services" class="services-section" data-aos="fade-up">
+    <h2 class="section-title">Our Services</h2>
     <p class="section-subtitle">
-      We have been working to make people's dreams come true. We are your trusted partner for student visas, coaching, and global opportunities.
+      Comprehensive support for your study abroad journey - from application to arrival.
     </p>
     
-    <div class="box-container">
-      <div class="info-box" data-aos="flip-left" data-aos-delay="200">
-        <h2>Documents Required for Student Visa</h2>
-        <p>Get a complete checklist of all the documents you need to apply for a student visa successfully.</p>
-        <a href="#" class="cta-button">Learn More</a>
+    <div class="services-grid">
+      <div class="service-card" data-aos="flip-left" data-aos-delay="200">
+        <div class="service-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h2>University Admission</h2>
+        <p>Guidance for selecting the right university and program based on your profile</p>
       </div>
-      <div class="info-box" data-aos="flip-left" data-aos-delay="300">
-        <h2>Best Immigration Process</h2>
-        <p>Discover the most efficient and reliable immigration pathways tailored to your destination.</p>
-        <a href="#" class="cta-button">Learn More</a>
+      <div class="service-card" data-aos="flip-left" data-aos-delay="300">
+        <div class="service-icon">
+          <i class="fas fa-passport"></i>
+        </div>
+        <h2>Visa Processing</h2>
+        <p>End-to-end visa assistance with documentation and application support</p>
       </div>
-      <div class="info-box" data-aos="flip-left" data-aos-delay="400">
-        <h2>Apply Online for a New Visa</h2>
-        <p>Start your visa application online with step-by-step guidance and expert support.</p>
-        <a href="#" class="cta-button">Learn More</a>
+      <div class="service-card" data-aos="flip-left" data-aos-delay="400">
+        <div class="service-icon">
+          <i class="fas fa-book"></i>
+        </div>
+        <h2>Test Preparation</h2>
+        <p>IELTS, TOEFL, and other test preparation guidance and resources</p>
       </div>
-      <div class="info-box" data-aos="flip-left" data-aos-delay="500">
-        <h2>Review from Our Clients</h2>
-        <p>Read real testimonials from students and families who've successfully gone abroad with us.</p>
-        <a href="#" class="cta-button">Learn More</a>
+      <div class="service-card" data-aos="flip-left" data-aos-delay="500">
+        <div class="service-icon">
+          <i class="fas fa-home"></i>
+        </div>
+        <h2>Accommodation</h2>
+        <p>Assistance with finding suitable accommodation in your destination country</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" data-aos="fade-up">
+    <h2 class="section-title" style="color: white;">Success Stories</h2>
+    <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">
+      Hear from students who achieved their dreams of studying abroad with our guidance.
+    </p>
+    
+    <div class="testimonial-grid">
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-text">
+          "Abroad Helplinebd made my dream of studying in Canada a reality. Their guidance through the entire process was invaluable!"
+        </div>
+        <div class="testimonial-author">- Rahman, University of Toronto</div>
+      </div>
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="testimonial-text">
+          "The team helped me secure a scholarship in Australia. I couldn't have done it without their expertise and support."
+        </div>
+        <div class="testimonial-author">- Fatima, Australian National University</div>
+      </div>
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="testimonial-text">
+          "From visa processing to pre-departure guidance, Abroad Helplinebd provided exceptional service at every step."
+        </div>
+        <div class="testimonial-author">- Ahmed, Seoul National University</div>
       </div>
     </div>
   </section>
@@ -495,25 +699,28 @@
     <p><i class="fas fa-envelope"></i> <strong>Email:</strong> Abroadhelplinebds@gmail.com</p>
     <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Jannat Tower 445, Nayapara Sonir Akhra Bus Stand, Donia, 4th floor, Dhaka, Bangladesh</p>
     <p><i class="fas fa-clock"></i> <strong>Available Hours:</strong> Sunday–Thursday, 11:00 AM – 6:00 PM</p>
-    <a href="#" class="cta-button" data-aos="zoom-in" data-aos-delay="400">Contact Us</a>
+    <a href="https://wa.me/+8801616624551" class="cta-button" data-aos="zoom-in" data-aos-delay="400">Contact Us</a>
   </section>
 
   <footer class="footer">
     <div class="social-icons">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://facebook.com/AbroadhelplineBD" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/+8801616624551" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://instagram.com/AbroadhelplineBD" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/AbroadhelplineBD" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
     <p>&copy; 2025 Abroad Helplinebd. All rights reserved.</p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: 'ease-in-out',
+    // Initialize animations
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-in-out',
+      });
     });
     
     // Simple animation for the search button
@@ -524,8 +731,15 @@
     document.querySelector('.search button').addEventListener('mouseout', function() {
       this.style.transform = 'scale(1)';
     });
+    
+    // Simple form validation for search
+    document.querySelector('.search button').addEventListener('click', function() {
+      const searchInput = document.querySelector('.search input');
+      if (searchInput.value.trim() === '') {
+        searchInput.focus();
+        searchInput.placeholder = 'Please enter a search term...';
+      }
+    });
   </script>
 </body>
-
 </html>
-
