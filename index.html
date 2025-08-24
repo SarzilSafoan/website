@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abroad Helplinebd</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary-blue: #0057b7;
+      --accent-red: #b80000;
+      --light-bg: #f9f9f9;
+      --dark-text: #1a1a1a;
+      --light-gray: #e0e0e0;
+      --white: #ffffff;
+      --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background-color: var(--primary-blue);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 50px;
+      margin-right: 0.75rem;
+      border-radius: 5px;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .menu a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #ffd700;
+      transition: width 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #ffd700;
+    }
+
+    .menu a:hover:after {
+      width: 100%;
+    }
+
+    .search {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .search input {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+      width: 200px;
+    }
+
+    .search button {
+      background-color: var(--accent-red);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .search button:hover {
+      background-color: #ff4d4d;
+      transform: scale(1.05);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background: linear-gradient(135deg, var(--primary-blue), var(--accent-red));
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+      background-size: cover;
+    }
+
+    .intro h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .intro p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .cta-button {
+      background-color: white;
+      color: var(--accent-red);
+      padding: 0.9rem 2rem;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+      background-color: var(--accent-red);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .study-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+
+    .study-options button {
+      background-color: white;
+      color: var(--primary-blue);
+      border: 2px solid var(--primary-blue);
+      padding: 0.9rem 1.8rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .study-options button:hover {
+      background-color: var(--primary-blue);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 4rem 0 2rem;
+      font-size: 2.2rem;
+      color: var(--primary-blue);
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--accent-red);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .info-box {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--box-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 5px solid var(--primary-blue);
+    }
+
+    .info-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .info-box h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      color: var(--primary-blue);
+    }
+
+    .info-box p {
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .info-box .cta-button {
+      margin-bottom: 0;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-info {
+      background-color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-top: 2px solid var(--accent-red);
+      margin-top: 4rem;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      color: var(--accent-red);
+    }
+
+    .contact-info p {
+      margin: 1rem 0;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+
+    .contact-info i {
+      color: var(--primary-blue);
+      font-size: 1.3rem;
+    }
+
+    .footer {
+      background-color: var(--accent-red);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.8rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #ffd700;
+      transform: translateY(-5px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .navbar {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      
+      .menu {
+        margin: 1rem 0;
+      }
+      
+      .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      
+      .search {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .search input {
+        width: 70%;
+      }
+      
+      .intro h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .study-options {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .study-options button {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
+      
+      .intro h1 {
+        font-size: 1.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="branding">
+      <img src="image.jpg" alt="Abroad Helplinebd Logo" class="logo-img" />
+      <div class="logo-text">Abroad Helplinebd</div>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="https://AbroadhelplineBD.com" target="_blank" rel="noopener">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Apply</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="search">
+      <input type="text" placeholder="Search programs, countries..." />
+      <button>Search</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <section class="intro">
+      <h1 data-aos="fade-down">Study Abroad with Confidence</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Your trusted Education Consultant for student visas and global opportunities.</p>
+      <a href="#" class="cta-button" data-aos="zoom-in" data-aos-delay="400">Book an Appointment</a>
+
+      <div class="study-options">
+        <button data-aos="fade-right" data-aos-delay="600">
+          <i class="fab fa-facebook-f" style="margin-right: 8px;"></i> Facebook
+        </button>
+        <button data-aos="fade-right" data-aos-delay="700">
+          <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Whatsapp
+        </button>
+        <button data-aos="fade-left" data-aos-delay="800">
+          <i class="fab fa-instagram" style="margin-right: 8px;"></i> Instagram
+        </button>
+        <button data-aos="fade-left" data-aos-delay="900" onclick="document.getElementById('contact-info').scrollIntoView({ behavior: 'smooth' });">
+          <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Visit Us
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <section data-aos="fade-up">
+    <h2 class="section-title">Study with Scholarships</h2>
+    <p class="section-subtitle">
+      We have been working to make people's dreams come true. We are your trusted partner for student visas, coaching, and global opportunities.
+    </p>
+ 
+
+    <div class="study-options">
+      <button data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://flagcdn.com/w40/au.png" alt="Australia Flag" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        Study in Australia
+      </button>
+      <button data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        Study in Canada
+      </button>
+      <button data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://flagcdn.com/w40/kr.png" alt="Korea Flag" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        Study in Korea
+      </button>
+      <button data-aos="zoom-in" data-aos-delay="500">
+        <img src="https://flagcdn.com/w40/my.png" alt="Malaysia Flag" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        Study in Malaysia
+      </button>
+      <button data-aos="zoom-in" data-aos-delay="600">
+        <img src="https://flagcdn.com/w40/cn.png" alt="China Flag" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        Study in China
+      </button>
+    </div>
+  </section>
+
+  <section class="info-boxes" data-aos="fade-up">
+    <h2 class="section-title">Explore Our Services</h2>
+    <p class="section-subtitle">
+      We have been working to make people's dreams come true. We are your trusted partner for student visas, coaching, and global opportunities.
+    </p>
+    
+    <div class="box-container">
+      <div class="info-box" data-aos="flip-left" data-aos-delay="200">
+        <h2>Documents Required for Student Visa</h2>
+        <p>Get a complete checklist of all the documents you need to apply for a student visa successfully.</p>
+        <a href="#" class="cta-button">Learn More</a>
+      </div>
+      <div class="info-box" data-aos="flip-left" data-aos-delay="300">
+        <h2>Best Immigration Process</h2>
+        <p>Discover the most efficient and reliable immigration pathways tailored to your destination.</p>
+        <a href="#" class="cta-button">Learn More</a>
+      </div>
+      <div class="info-box" data-aos="flip-left" data-aos-delay="400">
+        <h2>Apply Online for a New Visa</h2>
+        <p>Start your visa application online with step-by-step guidance and expert support.</p>
+        <a href="#" class="cta-button">Learn More</a>
+      </div>
+      <div class="info-box" data-aos="flip-left" data-aos-delay="500">
+        <h2>Review from Our Clients</h2>
+        <p>Read real testimonials from students and families who've successfully gone abroad with us.</p>
+        <a href="#" class="cta-button">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-info" class="contact-info" data-aos="fade-up">
+    <h3>Contact Information</h3>
+    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +8801616-624551</p>
+    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> Abroadhelplinebds@gmail.com</p>
+    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Jannat Tower 445, Nayapara Sonir Akhra Bus Stand, Donia, 4th floor, Dhaka, Bangladesh</p>
+    <p><i class="fas fa-clock"></i> <strong>Available Hours:</strong> Sunday–Thursday, 11:00 AM – 6:00 PM</p>
+    <a href="#" class="cta-button" data-aos="zoom-in" data-aos-delay="400">Contact Us</a>
+  </section>
+
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2025 Abroad Helplinebd. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
+    });
+    
+    // Simple animation for the search button
+    document.querySelector('.search button').addEventListener('mouseover', function() {
+      this.style.transform = 'scale(1.05)';
+    });
+    
+    document.querySelector('.search button').addEventListener('mouseout', function() {
+      this.style.transform = 'scale(1)';
+    });
+  </script>
+</body>
+</html>
